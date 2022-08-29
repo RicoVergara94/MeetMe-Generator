@@ -1,0 +1,33 @@
+body {
+  background-attachment: fixed;
+  height: 100%;
+  background: radial-gradient(purple, white);
+}
+/* #container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+} */
+#inputQuestion {
+  width: 300%;
+  height: 50%;
+  font-size: 40px;
+}
+#inputQuestion,
+#button {
+  display: inline-block;
+}
+
+/* #secondDiv {
+  color: black;
+} */
+#container {
+  float: left;
+  width: 25%;
+  height: 280px;
+}
+#answer {
+  float: right;
+  width: 30%;
+  height: 280px;
+  font-size: 50px;
+}
