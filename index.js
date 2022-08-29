@@ -1,6 +1,6 @@
 let button = document.getElementById("button");
 let currentImage = "";
-
+document.getElementById("loader").style.display = "none";
 // let imageArray = [
 // "images/Riza.png",
 // "images/Jerry.png",
@@ -53,13 +53,18 @@ function changeImage() {
 }
 
 button.addEventListener("click", () => {
-  changeImage();
-  const myInputArea = document.getElementById("inputQuestion").value;
+  document.getElementById("loader").style.display = "block";
 
-  let finalString = "The " + myInputArea;
-  let stringName = currentImage;
-  stringName = stringName.substring(7);
-  stringName = stringName.slice(0, -4);
-  finalString += " is " + stringName;
-  document.getElementById("answer").innerText = finalString;
+  setTimeout(() => {
+    changeImage();
+    document.getElementById("loader").style.display = "none";
+    const myInputArea = document.getElementById("inputQuestion").value;
+
+    let finalString = "The " + myInputArea;
+    let stringName = currentImage;
+    stringName = stringName.substring(7);
+    stringName = stringName.slice(0, -4);
+    finalString += " is " + stringName;
+    document.getElementById("answer").innerText = finalString;
+  }, 2000);
 });
