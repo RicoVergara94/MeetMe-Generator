@@ -41,13 +41,13 @@ function showLoadingLogo() {
 }
 
 function changeImage() {
+  document.getElementById("instructions").style.display = "none";
   let index = Math.floor(Math.random() * imageArray.length);
   let srcImage = imageArray[index];
   while (srcImage == currentImage) {
     index = Math.floor(Math.random() * imageArray.length);
     srcImage = imageArray[index];
   }
-  showLoadingLogo();
   document.getElementById("myImageId").src = srcImage;
   currentImage = srcImage;
 }
