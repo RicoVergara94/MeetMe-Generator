@@ -27,18 +27,18 @@ let imageArray = [
   "images/Will.png",
   "images/Michael.png",
 ];
-// function showLoadingLogo() {
-//   // need to change this property
-//   var logo = document.getElementById("loader");
-//   var img = document.getElementById("myImageId");
-//   if (logo.style.display === "none" && img.style.display === "block") {
-//     logo.style.display = "block";
-//     img.style.display = "none";
-//   } else {
-//     logo.style.display = "none";
-//     img.style.display = "block";
-//   }
-// }
+function showLoadingLogo() {
+  // need to change this property
+  var logo = document.getElementById("loader");
+  var img = document.getElementById("myImageId");
+  if (logo.style.display === "none" && img.style.display === "block") {
+    logo.style.display = "block";
+    img.style.display = "none";
+  } else {
+    logo.style.display = "none";
+    img.style.display = "block";
+  }
+}
 
 function changeImage() {
   let index = Math.floor(Math.random() * imageArray.length);
@@ -47,6 +47,7 @@ function changeImage() {
     index = Math.floor(Math.random() * imageArray.length);
     srcImage = imageArray[index];
   }
+  showLoadingLogo();
   document.getElementById("myImageId").src = srcImage;
   currentImage = srcImage;
 }
@@ -54,9 +55,7 @@ function changeImage() {
 button.addEventListener("click", () => {
   changeImage();
   const myInputArea = document.getElementById("inputQuestion").value;
-  // setTimeout(()=> {
 
-  // }, 2000);
   let finalString = "The " + myInputArea;
   let stringName = currentImage;
   stringName = stringName.substring(7);
@@ -64,6 +63,3 @@ button.addEventListener("click", () => {
   finalString += " is " + stringName;
   document.getElementById("answer").innerText = finalString;
 });
-// var image = document.getElementById('id');
-// image.style.width='imgWidth';
-// image.style.height='imgHeight';
